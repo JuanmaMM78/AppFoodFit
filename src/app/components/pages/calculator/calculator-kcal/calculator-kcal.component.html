@@ -1,0 +1,57 @@
+<article class="calculator">
+  <h2>Calculadora de calorías requeridas</h2>
+
+  <form [formGroup]="formModel" (ngSubmit)="getDataForm()">
+    <div class="genre">
+      <label for="genre">Género: </label>
+      <select name="genre" id="genre" formControlName="genre">
+        <option value="" selected>Selecciona</option>
+        <option value="m">Masculino</option>
+        <option value="f">Femenino</option>
+      </select>
+    </div>
+
+    <div class="activity">
+      <label for="activity">Actividad: </label>
+      <select name="activity" id="activity" formControlName="activity">
+        <option value="" selected>Selecciona</option>
+        <option value="sedentario">Sedentario</option>
+        <option value="poco">Poco Activo</option>
+        <option value="activo">Activo</option>
+        <option value="muy">Muy Activo</option>
+      </select>
+    </div>
+
+    <div class="age">
+      <label for="age">Edad: </label>
+      <input type="number" placeholder="18" formControlName="age" />
+    </div>
+
+    <div>
+      <label for="height">Estatura: </label>
+      <input type="number" placeholder="170 cm" formControlName="height" />
+    </div>
+
+    <div class="weight">
+      <label for="weight">Peso: </label>
+      <input type="number" placeholder="70 kg" formControlName="weight" />
+    </div>
+
+    <button [disabled]="!formModel.valid">Calcular las calorías</button>
+  </form>
+
+  <div class="text">
+    <p>
+      Su metabolismo basal es: <strong>{{ kal }} </strong>
+    </p>
+    <p>
+      Sus calorías para mantener el peso son: <strong>{{ basal }} </strong>
+    </p>
+    <p>
+      Sus calorías para pérdida de grasa son: <strong> {{ lossFat }} </strong>
+    </p>
+    <p>
+      Sus calorías para ganancia de peso son: <strong> {{ fatGain }} </strong>
+    </p>
+  </div>
+</article>

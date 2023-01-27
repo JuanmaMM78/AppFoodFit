@@ -1,0 +1,83 @@
+@import "variables";
+
+.header {
+  width: 100%;
+  background-color: $colorMain;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+
+  &__icon {
+    width: 10rem;
+    cursor: pointer;
+  }
+  &__nav {
+    display: none;
+
+    @include mobileFirst(maxTabletFood) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 1rem;
+      margin-right: 5rem;
+      gap: 2rem;
+
+      a {
+        padding: 1rem;
+      }
+    }
+  }
+  &__burger {
+    width: 4rem;
+    cursor: pointer;
+    background-color: $white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    border: 2px solid black;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include mobileFirst(maxTabletFood) {
+      display: none;
+    }
+  }
+
+  .active {
+    color: $colorSecondary;
+  }
+}
+
+.show__menu {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #b7f44eb9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: transform 0.5s ease;
+  transform: translate(0, -100%);
+
+  a {
+    font-size: 1.5rem;
+    color: black;
+    padding: 1rem;
+
+    &:hover {
+      background-color: #22b8c6;
+      color: white;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.active {
+  transform: translate(0, 0);
+}

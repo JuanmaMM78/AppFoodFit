@@ -1,0 +1,23 @@
+<div class="header">
+  <div [routerLink]="['home']" class="header__icon">
+    <img src="../../../assets/images/fitness.png" alt="image logo" />
+  </div>
+
+  <nav class="header__nav">
+    <a [routerLink]="['calculators']" routerLinkActive="active">Calculadoras</a>
+    <a [routerLink]="['tables']" routerLinkActive="active">Tabla de Calorías</a>
+    <a [routerLink]="['recipes']" routerLinkActive="active">Recetas</a>
+    <a [routerLink]="['blog']" routerLinkActive="active">Blog</a>
+  </nav>
+  <div (click)="changeFlag()" class="header__burger">
+    <img src="../../../assets/images/menu.png" alt="menu burger" />
+  </div>
+</div>
+
+<div class="show__menu" [ngClass]="{ active: flag }">
+  <a [routerLink]="['home']" (click)="changeFlag()">Inicio</a>
+  <a [routerLink]="['calculators']" (click)="changeFlag()">Calculadoras</a>
+  <a [routerLink]="['tables']" (click)="changeFlag()">Tabla de Calorías</a>
+  <a [routerLink]="['recipes']" (click)="changeFlag()">Recetas</a>
+  <a [routerLink]="['blog']" (click)="changeFlag()">Blog</a>
+</div>

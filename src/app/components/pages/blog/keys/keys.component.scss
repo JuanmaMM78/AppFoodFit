@@ -1,0 +1,27 @@
+@import "variables";
+
+.blog__article {
+  h2 {
+    padding: 1rem;
+    text-align: center;
+    background-color: #b7f44e;
+    margin: 1.5rem 0;
+    border-radius: 20px;
+    color: black;
+  }
+
+  h3 {
+    margin: 1rem 0;
+  }
+
+  figure {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .text {
+    padding: 2rem 0;
+  }
+}

@@ -1,0 +1,23 @@
+<article class="calculator">
+  <h2>Calculadora de calorías gastadas</h2>
+
+  <form [formGroup]="formModel" (ngSubmit)="getDataForm()">
+    <div>
+      <label for="height">Pasos: </label>
+      <input type="number" placeholder="10000" formControlName="steps" />
+    </div>
+
+    <div class="weight">
+      <label for="weight">Peso: </label>
+      <input type="number" placeholder="70 kg" formControlName="weight" />
+    </div>
+
+    <button [disabled]="!formModel.valid">Calcular las calorías</button>
+  </form>
+
+  <div class="text">
+    <p>
+      Sus calorías gastadas son: <strong> {{ kal }} </strong>
+    </p>
+  </div>
+</article>

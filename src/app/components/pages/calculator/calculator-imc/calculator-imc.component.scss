@@ -1,0 +1,57 @@
+@import "variables";
+
+.calculator {
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+
+  @include mobileFirst(tablet) {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  h2 {
+    padding: 1rem 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    @include mobileFirst(tablet) {
+      max-width: 50%;
+      margin: 0 auto;
+    }
+
+    button {
+      padding: 0.5rem;
+      border-radius: 10px;
+      background-color: #8acacf;
+      cursor: pointer;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+  }
+
+  .text {
+    padding: 1rem;
+  }
+
+  .table {
+    margin: 1rem 0;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,27 @@
+<article class="calculator">
+  <h2>Calculadora IMC</h2>
+
+  <form [formGroup]="formModel" (ngSubmit)="getDataForm()">
+    <div>
+      <label for="height">Estatura: </label>
+      <input type="number" placeholder="170 cm" formControlName="height" />
+    </div>
+
+    <div class="weight">
+      <label for="weight">Peso: </label>
+      <input type="number" placeholder="70 kg" formControlName="weight" />
+    </div>
+
+    <button [disabled]="!formModel.valid">Calcular el IMC</button>
+  </form>
+
+  <div class="text">
+    <p>
+      Su IMC es: <strong> {{ result }} </strong>
+    </p>
+  </div>
+
+  <div class="table">
+    <img src="../../../../../assets/images/IMC-05.png" alt="table IMC" />
+  </div>
+</article>

@@ -1,0 +1,26 @@
+<section class="calculators">
+  <h1>Calculadoras</h1>
+
+  <div class="container">
+    <div class="sub__menu">
+      <div class="calc">
+        <img
+          src="../../../../assets/images/imc.webp"
+          alt="image imc"
+          [routerLink]="['/calculators', 'IMC']"
+        />
+        <h3>Calculadora IMC</h3>
+      </div>
+      <div class="calc" [routerLink]="['/calculators', 'kcal']">
+        <img src="../../../../assets/images/kcal.jpg" alt="image kcal" />
+        <h3>Calculadora Kcal</h3>
+      </div>
+      <div class="calc" [routerLink]="['/calculators', 'burn']">
+        <img src="../../../../assets/images/caminar.jpeg" alt="image walk" />
+        <h3>Calculadora Kcal/Gastadas</h3>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</section>
